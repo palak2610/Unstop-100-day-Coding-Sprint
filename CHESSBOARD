@@ -1,0 +1,23 @@
+function processData(input) {
+  // write your code here
+  const asciiValue = input.charCodeAt(0);
+  const yAxisValue = parseInt(input[1]);
+  const sum = asciiValue + yAxisValue;
+  
+  if (sum % 2 === 0) {
+    console.log('Black');
+  } else {
+    console.log('White');
+  }
+}
+
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
+let _input = '';
+process.stdin.on('data', function (input) {
+  _input += input;
+});
+
+process.stdin.on('end', function () {
+  processData(_input.trim());
+});
